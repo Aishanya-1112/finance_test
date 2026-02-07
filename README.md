@@ -1,8 +1,8 @@
-# WDMMG - Where Does My Money Go
+# WDMMG 
 
 Personal finance tracker with user authentication and transaction management.
 
-# WDMMG - Where Does My Money Go
+# WDMMG 
 
 Personal finance tracker with user authentication and transaction management.
 
