@@ -1,0 +1,7 @@
+SUPABASE_URL=your_supabase_url_here
+SUPABASE_KEY=your_supabase_anon_key_here
+
+# Instructions:
+# 1. Copy this file to .env
+# 2. Replace the values with your actual Supabase credentials
+# 3. Find your credentials at: https://app.supabase.com/project/YOUR_PROJECT/settings/api
