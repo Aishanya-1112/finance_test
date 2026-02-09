@@ -14,9 +14,10 @@ from auth_ui import (
     update_activity
 )
 from io import BytesIO
+import os
 
-# Backend API URL
-API_URL = "http://localhost:8000"
+# Backend API URL - use environment variable for production
+API_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 # Page configuration
 st.set_page_config(

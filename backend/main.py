@@ -51,6 +51,12 @@ def sanitize_input(text: str) -> str:
     """Sanitize user input to prevent XSS attacks"""
     return bleach.clean(text, tags=[], strip=True)
 
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for Render"""
+    return {"status": "healthy"}
+
 # Categories
 CATEGORIES = [
     "Food",

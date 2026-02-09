@@ -1,0 +1,29 @@
+services:
+  # Backend API Service
+  - type: web
+    name: finance-tracker-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+    healthCheckPath: /health
+
+  # Frontend Streamlit Service
+  - type: web
+    name: finance-tracker-frontend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd frontend && streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: BACKEND_URL
+        value: https://finance-tracker-backend.onrender.com
